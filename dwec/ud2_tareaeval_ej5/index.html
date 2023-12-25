@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const letrasDNI = ["T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", "X", "B", "N", "J", "Z", "S", "Q", "V", "H", "L", "C", "K", "E"];    //Array con las letras del DNI y su posición
+        var dni;                                                //Recogerá el valor introducido por el usuario
+        var dni_valido;                                         //Flag que indica si el DNI es válido
+        var car_valido;                                         //Flag que indica si el carácter evaluado es válido
+        do {
+
+            dni_valido = true;                                  //Ponemos el flag de DNI a true. A partir de aquí solo será false si se cumple alguna condición de invalidez.
+            dni = window.prompt("Introduce DNI", "");           //Solicitamos al usuario el DNI
+
+            if (dni.length != 8)                                //Si el DNI introducido no tiene 8 caracteres, no es válido
+                dni_valido = false;
+            else
+                for (var i = 0; i < 8; i++) {                    //Recorremos los caracteres de la cadena introducida para ver si están en el rango de caracteres válidos
+                    car_valido = false;                         //Ponemos flag de caracter válido a false. Solo será true si coincide con uno de los valores permitidos.
+                    for (var j = 0; j < 10; j++)
+                        if (dni[i] == String(j))
+                            car_valido = true;                  //Si el caracter coincide con un valor válido, ese carácter es válido
+
+                    if (!car_valido)                             //Si en ningún momento, el flag de car_valido ha llegado a ser true, quiere decir que no es válido
+                        dni_valido = false;                     //y por tanto, el DNI tampoco es válido
+                }
+
+
+            if (dni_valido)                                         //Si el DNI es válido,
+                alert(dni + letrasDNI[parseInt(dni) % 23]);    //Mostramos el DNI + la letra, que se corresponde al índice del módulo del DNI
+            else
+                alert("El DNI introducido no es válido");           //Si el DNI no es válido, mostramos este mensaje
+
+        } while (dni != null);                                      //Si el usuario pulsó Cancelar, el bucle se acaba
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D2 - Tarea evaluable - Ejercicio 2</title>
+</head>
+
+<body>
+    <script>
+
+        var concatenacion = "";
+        var respuesta;
+
+        do {
+
+            respuesta = window.prompt("Introduce una cadena", "");          //Solicitamos el valor
+
+            if (respuesta != null) {                                        //Si no se ha pulsado el botón cancelar
+                if (concatenacion != "")                                    //miramos si es la primera cadena en llegar a la concatenación
+                    concatenacion += " - ";                                 //si no lo es, añadimos el guión de separación
+                concatenacion += respuesta;                                 //y añadimos la cadena
+            }
+
+        } while (respuesta != null);                                        //Si respuesta es null, es porque se ha hecho clic en cancelar
+
+        alert(concatenacion);
+
+    </script>
+</body>
+
+</html>

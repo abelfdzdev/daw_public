@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>D2 - Tarea evaluable - Ejercicio 2</title>
+    </head>
+    <body>
+        <script>
+            
+            var sumatorio = 0;
+            var respuesta;
+
+            do {
+                
+                respuesta = window.prompt("Introduce número","");           //Solicitamos el valor
+                
+                if(respuesta == "" || Number.isNaN(Number(respuesta))) {    //Revisamos si el valor introducido no es una cadena
+                    alert("No has introducido un número válido");           
+                } else if(respuesta != null)                                //Revisamos si se ha hecho clic en Cancelar
+                    sumatorio += Number(respuesta);                         //Si no se ha pulsado cancelar, se añade el valor al sumatorio
+
+            } while (respuesta != null);                                    //Si respuesta es null, es porque se ha hecho clic en cancelar
+
+            alert("La suma de los números introducidos es: " + sumatorio);
+
+        </script>
+    </body>
+</html>

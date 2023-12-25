@@ -1,0 +1,73 @@
+/*
+    Archivo de CSS para Tarea no evaluable UD2
+    Diseño de Interfaces Web
+*/
+
+body {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+#menu a {
+    color: #679436;
+    text-decoration: none;
+}
+
+#menu a:hover {
+    color: #A5BE00;
+}
+
+#menu li {
+    display: inline;
+}
+
+#cuerpo {
+    color: #454955;
+}
+
+.logo {
+    height: 60px;
+}
+
+.foto {
+    width: 360px;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+    font-size: 32px;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+h3 {
+    font-size: 21px;
+}
+
+h4 {
+    font-size: 18px;
+}
+
+h5 {
+    font-size: 14px;
+}
+
+p, ul, ol {
+    font-family: 'Roboto Slab', serif;
+}
+
+#pie {
+    width: 100%;
+    background-color: #0D0A0B;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+#pie p {
+    color: #F3EFF5;
+}

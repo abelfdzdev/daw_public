@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UD2 - Tarea evaluable - Ejercicio 2</title>
+</head>
+<body>
+    <script>
+        var nota = window.prompt("Introduce edad","");
+
+        /*
+            Antes de evaluar la edad, debemos revisar todos los casos posibles de lo que puede introducir el usuario:
+            A) Que el usuario pulse el valor cancelar
+            B) Que el usuario introduzca una cadena vacía
+            C) Que el usuario introduzca una cadena no numérica
+            D) Que el usuario introduzca un número menor que cero (es un número pero no es una nota válida)
+            E) Que el usuario introduzca un número mayor que 10 (es un  número pero no es una nota válida)
+            F) Que el usuario introduzca un número válido
+        */
+        
+        if(nota == null || nota == "")                              //Revisa los casos A y B
+            alert("No has introducido ningún valor");
+        else if(Number.isNaN(Number(nota)) || Number(nota) < 0 || Number(nota) > 10)     //Revisa los casos C, D y E. La función Number.isNan(v), evalúa si una variable es un "Not a number" (Nan)
+            alert("No has introducido un valor válido")
+        else if(Number(nota) < 3)                                  //Llegados aquí, el valor es válido y se puede evaluar la nota
+            alert("MUY DEFICIENTE");
+        else if(Number(nota) < 5)
+            alert("SUSPENSO");
+        else if(Number(nota) < 6)
+            alert("SUFICIENTE");
+        else if(Number(nota) < 7)
+            alert("BIEN");
+        else if(Number(nota) < 9)
+            alert("NOTABLE");
+        else
+            alert("SOBRESALIENTE");
+    
+    </script>        
+</body>
+</html>
